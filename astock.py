@@ -28,12 +28,10 @@ def loadStockList():
 			# 6位长度的代码必须全是数字
 			if stockNumber.decode().isdigit():
 				# 0开头自动补sz，6开头补sh，3开头补sz，否则无效
-				if stockNumber.startswith('0'):
+				if stockNumber.startswith('0') or stockNumber.startswith('15') or stockNumber.startswith('16') or stockNumber.startswith('3'):
 					stockList.append('sz' + stockNumber)
-				elif stockNumber.startswith('6'):
+				elif stockNumber.startswith('6') or stockNumber.startswith('51'):
 					stockList.append('sh' + stockNumber)
-				elif stockNumber.startswith('3'):
-					stockList.append('sz' + stockNumber)
 		elif stockNumber == 'sh':
 			stockList.append('sh000001')
 		elif stockNumber == 'sz':
@@ -87,9 +85,10 @@ else:
 		result = requestStockData()
 		if result == ResultSuccess:
 			print(lastTime)
+                        lastData.sort(key=lambda Stock: Stock.increase, reverse=True)
 			for stock in lastData:
 				stock.printStockData()
-			time.sleep(10)
+			time.sleep(30)
 		elif result == ResultTimeout:
 			print('超时重试')
 			time.sleep(2.5)
@@ -103,7 +102,7 @@ else:
 				print('已经休市')
 				break
 			else:
-				time.sleep(5)
+				time.sleep(15)
 		else:
 			print('未知错误')
 			break

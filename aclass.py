@@ -14,6 +14,7 @@ class Stock:
 		self.highest = float(highest)
 		self.lowest = float(lowest)
 		self.buyPercent = 0.0 # 买卖盘五档委比
+                self.increase =  (self.current - self.yesterdayEnd) / self.yesterdayEnd * 100
 
 	# 计算买卖委比
 	def calcBuyPercent(self, volumes):
