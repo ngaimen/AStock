@@ -88,10 +88,10 @@ else:
                         lastData.sort(key=lambda Stock: Stock.increase, reverse=True)
 			for stock in lastData:
 				stock.printStockData()
-			time.sleep(30)
+			time.sleep(60)
 		elif result == ResultTimeout:
 			print('超时重试')
-			time.sleep(2.5)
+			time.sleep(5)
 		elif result == ResultNoChange:
 			timeValue = int(lastTime.replace(':', '')[0:4])
 			if timeValue > 1130 and timeValue < 1255:
@@ -102,7 +102,7 @@ else:
 				print('已经休市')
 				break
 			else:
-				time.sleep(15)
+				time.sleep(30)
 		else:
 			print('未知错误')
 			break

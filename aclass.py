@@ -2,7 +2,7 @@
 import re
 from termcolor import colored
 
-asciiPattern = re.compile(r'[A-Z* ]')
+asciiPattern = re.compile(r'[A-Z* 0-9*]')
 
 # 实时数据Class
 class Stock:
@@ -39,7 +39,7 @@ class Stock:
 	def formattedName(self):
 		asciiCount = len(asciiPattern.findall(self.name))
 		nameWidth = (len(self.name) - asciiCount) / 3 * 2 + asciiCount
-		return ' ' * (8 - nameWidth) + self.name
+		return self.name + ' ' * (8 - nameWidth)
 
 	# 打印股票数据
 	def printStockData(self):
