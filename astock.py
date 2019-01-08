@@ -18,6 +18,26 @@ lastTime = ''
 lastData = []
 
 def loadStockList():
+        if len(sys.argv) <= 1:
+                stockList.append('sh600987')
+                stockList.append('sh600037')
+                stockList.append('sh600507')
+                stockList.append('sh601188')
+                stockList.append('sh601158')
+                stockList.append('sh600585')
+                stockList.append('sz159949')
+                stockList.append('sz159901')
+                stockList.append('sh510050')
+                stockList.append('sh510500')
+                stockList.append('sh513050')
+                stockList.append('sz162411')
+                stockList.append('sz159920')
+                stockList.append('sh518880')
+                stockList.append('sh513100')
+                stockList.append('sh513500')
+
+                return True
+
 	for index in range(1, len(sys.argv)):
 		stockNumber = sys.argv[index]
 		if len(stockNumber) == 8:
@@ -74,11 +94,7 @@ def requestStockData():
 		return ResultUnknown
 	return ResultSuccess
 
-if len(sys.argv) < 2:
-	print('使用示例: python astock.py sh600000 sz000001')
-	print('自动补全: 6字头股票代码脚本会自动补sh前缀，0字头和3字头补sz')
-	print('特殊代码: sh-上证指数，sz-深证指数，zx-中小板指，cy-创业板指，300-沪深300')
-elif loadStockList() == False:
+if loadStockList() == False:
 	print('没有有效的股票代码')
 else:
 	while True:
