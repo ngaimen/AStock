@@ -21,21 +21,18 @@ def loadStockList():
         if len(sys.argv) <= 1:
                 stockList.append('sh600987')
                 stockList.append('sh600037')
-                stockList.append('sh600507')
                 stockList.append('sh601188')
-                stockList.append('sh601158')
-                stockList.append('sh600585')
                 stockList.append('sz159949')
                 stockList.append('sz159901')
                 stockList.append('sh510050')
                 stockList.append('sh510500')
-                stockList.append('sh513050')
                 stockList.append('sz162411')
                 stockList.append('sz159920')
                 stockList.append('sh518880')
                 stockList.append('sh513100')
-                stockList.append('sh513500')
-
+                stockList.append('sh512660')
+                stockList.append('sz159938')
+                stockList.append('sh513050')
                 return True
 
 	for index in range(1, len(sys.argv)):

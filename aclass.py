@@ -61,10 +61,10 @@ class Stock:
 			increaseStr = '  0.00%'
 		else:
 			increaseStr = '%+6.2f%%' % ((self.current - self.yesterdayEnd) / self.yesterdayEnd * 100)
-			if self.current < self.yesterdayEnd:
-				increaseStr = colored(increaseStr, 'green')
-			else:
-				increaseStr = colored(increaseStr, 'red')
+			#if self.current < self.yesterdayEnd:
+			#	increaseStr = colored(increaseStr, 'green')
+			#else:
+			#	increaseStr = colored(increaseStr, 'red')
 		# 计算振幅及现价在今日振幅中的百分比位置
 		swingRangeStr = ''
 		swingPercentStr = ''
