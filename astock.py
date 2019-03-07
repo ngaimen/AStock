@@ -22,7 +22,6 @@ def loadStockList():
         if len(sys.argv) <= 1:
                 stockList.append('sh600987')
                 stockList.append('sh600037')
-                stockList.append('sh601188')
                 stockList.append('sz159949')
                 stockList.append('sz159901')
                 stockList.append('sh510050')

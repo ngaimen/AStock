@@ -50,12 +50,16 @@ class Stock:
 		# 计算现价显示的小数点位数
 		if self.current < 10:
 			priceStr = '%6.3f' % self.current
+                        highestStr = '%6.3f' % self.highest
 		elif self.current < 100:
 			priceStr = '%6.2f' % self.current
+                        highestStr = '%6.2f' % self.highest
 		elif self.current < 1000:
 			priceStr = '%6.1f' % self.current
+                        highestStr = '%6.1f' % self.highest
 		else:
 			priceStr = '%6.0f' % self.current
+                        highestStr = '%6.0f' % self.highest
 		# 计算今日的涨跌幅
 		if self.current == self.yesterdayEnd:
 			increaseStr = '  0.00%'
@@ -87,4 +91,4 @@ class Stock:
 		else:
 			buyPercentStr = colored('-' * int(self.buyPercent * -5.99), 'green')
 		# 打印结果
-		print('%s: %s %s %s %s %s' % (self.formattedName(), priceStr, increaseStr, swingRangeStr, swingPercentStr, buyPercentStr))
+		print('%s: %s %s %s %s %s %s' % (self.formattedName(), priceStr, increaseStr, swingRangeStr, swingPercentStr, highestStr, buyPercentStr))
